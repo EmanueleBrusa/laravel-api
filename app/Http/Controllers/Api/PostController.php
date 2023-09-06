@@ -19,4 +19,15 @@ class PostController extends Controller
 
         return PostResource::collection($posts);
     }
+
+    /**
+     * Display a resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Post $post)
+    {
+
+        return PostResource::make($post);
+    }
 }
