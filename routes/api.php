@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\LeadController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\PostController;
@@ -21,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/posts', [PostController::class, 'index'])->name('api.posts.index');
 Route::get('/post/{post}', [PostController::class, 'show'])->name('api.posts.show');
+Route::post('/leads/store', [LeadController::class, 'store'])->name('api.leads.store');
